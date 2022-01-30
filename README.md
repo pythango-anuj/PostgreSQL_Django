@@ -1,8 +1,9 @@
-
 # PostgreSQL Integration with Django Application
 Django is a flexible framework for quickly creating Python applications. By default, Django applications are configured to store data into a lightweight SQLite database file. While this works well under some loads, a more traditional DBMS can improve performance in production.
 
 That's why we are use using PostgreSQL here in our project.
+
+So our First task is to Integrate PostgreSQL with a Django Application.
 
 Note: All commands are being run on ubuntu terminal.
 # STEP1: Install the Components from the Ubuntu Repositories
@@ -124,4 +125,58 @@ By accessing the admin interface, we have confirmed that our database has stored
 In this guide, we’ve demonstrated how to install and configure PostgreSQL as the backend database for a Django project. While SQLite can easily handle the load during development and light production use, most projects benefit from implementing a more full-featured DBMS.
 
 
+# PROJECT INSIDE REPOSITORY
 
+# DRF Authentication System (Using dj_rest_auth)
+Django REST framework is a powerful and flexible toolkit for building Web APIs. In this project we are 
+mainly focussing Authentication APIS.
+
+There are many ways to develop Authenticating apis in DRF but in this project we have designed our own custom user model
+and used dj_rest_auth(https://dj-rest-auth.readthedocs.io/en/latest/) for creating our API endpoints.
+It provides us almost all authenticating properties requires for any Authentication system like:
+
+Register(Add a new User)
+
+Login
+
+Logout
+
+Password change
+
+Password Reset
+
+and many more include CRUD operations of a user.
+
+
+Apart from that one another tool that we have used in this project is [drf_yasg(Swagger Generator)](https://drf-yasg.readthedocs.io/en/stable/readme.html) 
+for API Documentation which makes our API look awesome.
+
+# PREQUISITES
+
+Following programmes should be installed on your computer to run this project properly:
+
+Python 3.6+
+
+Virtual Environment
+
+To install virtual environment on your system use:
+
+pip install virtualenv
+
+# Installation and Running :
+
+git clone https://github.com/pythango/PostgreSQL_Django.git
+
+virtualenv myenv
+
+source myenv/bin/activate
+
+pip install -r requirements.txt
+
+python manage.py makemigrations
+
+python manage.py migrate
+
+python manage.py runserver
+
+Open Browser and Type http://127.0.0.1:8000
